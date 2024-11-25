@@ -10,7 +10,7 @@ const InventoryPage = () => {
         // Fetch all products from the backend
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:3001/get_products', {
+                const response = await fetch('https://nameless-waters-82317-75da4f904716.herokuapp.com/get_products', {
                     method: 'GET',
                     headers: { 'Content-Type': 'application/json' },
                 });
