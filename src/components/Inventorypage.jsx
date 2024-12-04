@@ -10,7 +10,7 @@ const InventoryPage = () => {
         // Fetch all products from the backend
         const fetchProducts = async () => {
             try {
-                const response = await fetch('https://nameless-waters-82317-75da4f904716.herokuapp.com/get_products', {
+                const response = await fetch('http://localhost:3001/get_products', {
                     method: 'GET',
                     headers: { 'Content-Type': 'application/json' },
                 });
@@ -34,7 +34,7 @@ const InventoryPage = () => {
 
     const handleStockChange = async (productId, newQuantity) => {
         // Update the available quantity for the product
-        const response = await fetch('https://nameless-waters-82317-75da4f904716.herokuapp.com/update_product_stock', {
+        const response = await fetch('http://localhost:3001/update_product_stock', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ _id: productId, availableQuant: parseInt(newQuantity) }),
@@ -76,7 +76,7 @@ const InventoryPage = () => {
                 <tbody>
                     {products.map((product) => (
                         <tr key={product._id}>
-                            <td>{product.name}</td>
+                            <td>{product.Route}</td>
                             <td>{product.availableQuant}</td>
                             <td>
                                 <input
